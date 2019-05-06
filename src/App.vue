@@ -1,29 +1,53 @@
-<template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+<template lang="pug">
+  #app
+    Header
+    main#main-content
+      .slider-left
+        Slider
+      .content
+        router-view
 </template>
+<script lang="ts">
+import { Component, Prop, Vue } from 'vue-property-decorator';
+import Header from '@/components/Header.vue';
+import Slider from '@/components/Slider.vue';
+@Component({
+  components: {
+    Header,
+    Slider
+  },
+})
+export default class Home extends Vue{
+  
+}
+</script>
 
 <style lang="scss">
+html,body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
+  min-height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr;
 }
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+#main-content {
+  display: flex;
+  .slider-left{
+    padding: 10px;
+    width: 190px;
+    background-color: rgba(204,204,204,0.5)
+  }
+  .content{
+    display: flex;
+    flex: 1;
+    justify-content: center;
   }
 }
 </style>
