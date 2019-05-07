@@ -5,7 +5,8 @@
       .slider-left
         Slider
       .content
-        router-view
+        transition(name="fade-transform" mode="out-in")
+          router-view
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
@@ -23,11 +24,7 @@ export default class Home extends Vue{
 </script>
 
 <style lang="scss">
-html,body {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-}
+@import './styles/index.scss';
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -47,7 +44,6 @@ html,body {
   .content{
     display: flex;
     flex: 1;
-    justify-content: center;
   }
 }
 </style>

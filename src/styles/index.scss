@@ -1,0 +1,25 @@
+@import './transitions.scss';
+
+html,body,ul {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+.app-button {
+  height: 30px;
+  font: 14px "Microsoft YaHei",arial,SimSun,"宋体";
+  border: 1px solid rgba(9,170,255,0.5);
+  border-radius: 4px;
+  display: inline-flex;
+  min-width: 80px;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 3px;
+  cursor: pointer;
+  i{}
+  span {
+    padding: 0 10px;
+    color: #09AAFF;
+    font-weight: bold
+  }
+}

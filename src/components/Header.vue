@@ -1,6 +1,8 @@
 <template lang="pug">
   .header
-    .logo-area logo image
+    .logo-area
+      .logo-truck
+      .logo-intro File Box
     .user-info
       .user-info-phtoto
       .user-info-name 张三
@@ -20,6 +22,20 @@ export default class Header extends Vue{
   height: 42px
   .logo-area
     flex: 1
+    display: inline-flex
+    align-items: center
+    .logo-truck
+      background: url('~@/assets/trunck.svg')  no-repeat center
+      height: 40px
+      width: 80px
+      background-size: contain
+    .logo-intro
+      display: flex
+      align-items: flex-end
+      font-weight: bold
+      font-size: 24px
+      padding-left: 10px
+      height: 40px
   .user-info
     display: inline-flex
     align-items: center
